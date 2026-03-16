@@ -1,0 +1,89 @@
+[
+  {
+    "shortDescription" : "Lung X-Ray: Covid|Normal|Tuberculosis|Viral Pneumonia",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "isOptional" : "0",
+        "keyType" : "String",
+        "formattedType" : "Dictionary (String → Double)",
+        "type" : "Dictionary",
+        "name" : "var_1859",
+        "shortDescription" : "Softmax probability per class"
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "String",
+        "type" : "String",
+        "name" : "classLabel",
+        "shortDescription" : "Predicted disease class"
+      }
+    ],
+    "version" : "1.0",
+    "modelParameters" : [
+
+    ],
+    "author" : "EfficientNet-B3 PyTorch + GradCAM",
+    "specificationVersion" : 4,
+    "storagePrecision" : "Float16",
+    "computePrecision" : "Float16",
+    "stateSchema" : [
+
+    ],
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.15",
+      "tvOS" : "13.0",
+      "visionOS" : "1.0",
+      "watchOS" : "6.0",
+      "iOS" : "13.0",
+      "macCatalyst" : "13.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetworkClassifier"
+    },
+    "inputSchema" : [
+      {
+        "height" : "224",
+        "colorspace" : "RGB",
+        "isOptional" : "0",
+        "width" : "224",
+        "isColor" : "1",
+        "formattedType" : "Image (Color 224 × 224)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "Chest X-ray RGB 224x224 raw 0-255",
+        "name" : "input_image"
+      }
+    ],
+    "classLabels" : [
+      "Covid",
+      "Normal",
+      "Tuberculosis",
+      "Viral Pneumonia"
+    ],
+    "generatedClassName" : "GAIA_Classifier",
+    "userDefinedMetadata" : {
+      "com.github.apple.coremltools.version" : "7.2",
+      "com.github.apple.coremltools.source" : "torch==2.9.0+cu126",
+      "com.github.apple.coremltools.source_dialect" : "TorchScript"
+    },
+    "neuralNetworkLayerTypeHistogram" : {
+      "ExpandDims" : 4,
+      "SoftmaxND" : 1,
+      "InnerProduct" : 3,
+      "Convolution" : 130,
+      "ActivationSigmoid" : 104,
+      "ReshapeStatic" : 1,
+      "LoadConstantND" : 2,
+      "Squeeze" : 4,
+      "BatchNorm" : 2,
+      "Multiply" : 105,
+      "Add" : 20,
+      "ActivationLinear" : 1,
+      "ActivationLeakyReLU" : 2,
+      "PoolingAverage" : 27
+    },
+    "method" : "predict"
+  }
+]
